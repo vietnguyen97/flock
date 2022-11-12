@@ -2,7 +2,7 @@ import { Col, Row } from "antd";
 import React from "react";
 import Header from "../../components/header";
 import SigninIndex from "../../components/sign-in";
-import { SSignInPage } from "./styled";
+import SSignInPage from "./styled";
 
 const SignInPage = () => {
   return (

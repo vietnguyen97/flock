@@ -7,4 +7,4 @@ const SSignInPage = styled.div`
   overflow-y: hidden;
 `;
 
-export { SSignInPage };
+export default SSignInPage;

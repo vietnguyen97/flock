@@ -5,4 +5,4 @@ const SHomePage = styled.div`
   padding: 36px 130px 96px 82px;
 `;
 
-export { SHomePage };
+export default SHomePage;
