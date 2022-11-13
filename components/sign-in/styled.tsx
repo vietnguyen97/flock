@@ -1,9 +1,16 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-const SSigninIndex = styled.div`
+const SSigninIndex = styled("div")<{ size: boolean }>`
   display: flex;
   justify-content: center;
-  height: 100vh;
+  ${(props) =>
+    props.size
+      ? css`
+          height: unset;
+        `
+      : css`
+          height: 100vh;
+        `}
   .wrap-sign-in {
     margin-top: 36px;
     border-radius: 64px 64px 0px 0px;
@@ -88,6 +95,26 @@ const SSigninIndex = styled.div`
   }
   .ant-checkbox-checked .ant-checkbox-inner:after {
     border-color: #20cf77 !important;
+  }
+
+  @media only screen and (max-width: 414px) {
+    .wrap-sign-in {
+      border-radius: 40px 40px 0px 0px;
+      width: unset;
+      width: 96%;
+    }
+    .wrap-content {
+      padding: 40px 24px 0px 24px;
+    }
+    .wrap-btn-login {
+      flex-direction: column;
+      button {
+        margin-bottom: 20px;
+      }
+      .sign-up {
+        width: unset;
+      }
+    }
   }
 `;
 

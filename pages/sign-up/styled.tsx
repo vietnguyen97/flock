@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-const SSignInPage = styled("div")<{ isScroll: boolean }>`
+const SSignUp = styled("div")<{ isScroll: boolean }>`
   background: linear-gradient(270deg, #007ead 0%, #c7f833 100%, #5ddfc0 100%);
   padding-top: 36px;
   ${(props) =>
@@ -15,4 +15,4 @@ const SSignInPage = styled("div")<{ isScroll: boolean }>`
         `}
 `;
 
-export default SSignInPage;
+export default SSignUp;

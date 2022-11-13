@@ -6,6 +6,7 @@ import Header from "../components/header";
 import Invesment from "../components/invesment";
 import MutilField from "../components/mutil-field";
 import SHomePage from "./styled";
+import { GetStaticProps } from "next";
 
 export default function Home() {
   return (
@@ -22,3 +23,9 @@ export default function Home() {
     </>
   );
 }
+
+export const getStaticProps: GetStaticProps = async (ctx) => {
+  return {
+    props: {},
+  };
+};

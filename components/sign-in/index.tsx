@@ -3,12 +3,14 @@ import React from "react";
 import CustomForm from "../custom-form";
 import { SSigninIndex } from "./styled";
 import { useForm } from "react-hook-form";
+import { SigninInput } from "./interface";
 
-const SigninIndex = () => {
-  const { control, handleSubmit } = useForm();
+const SigninIndex: React.FC<SigninInput> = (props) => {
+  const { size } = props;
+  const { control } = useForm();
   return (
     <>
-      <SSigninIndex>
+      <SSigninIndex size={size <= 414 ? true : false}>
         <div className="wrap-sign-in">
           <div className="wrap-content">
             <div className="hello">
@@ -23,7 +25,7 @@ const SigninIndex = () => {
               </span>
             </div>
             <Row>
-              <Col span={12}>
+              <Col xl={12} xs={24}>
                 <CustomForm
                   name="email"
                   label="Email đăng nhập"
@@ -34,7 +36,7 @@ const SigninIndex = () => {
                     <Input
                       placeholder="Email của bạn"
                       {...field}
-                      autoComplete={false}
+                      autoComplete="false"
                     />
                   )}
                 />
@@ -47,7 +49,7 @@ const SigninIndex = () => {
                     <Input.Password
                       placeholder="Mật khẩu"
                       {...field}
-                      autoComplete={false}
+                      autoComplete="false"
                     />
                   )}
                 />

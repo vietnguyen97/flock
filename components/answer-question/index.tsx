@@ -28,6 +28,7 @@ const AnswerQuestion = () => {
           <Col span={6}>
             <Collapse
               ghost
+              expandIconPosition="end"
               expandIcon={({ isActive }) =>
                 isActive ? (
                   <Image
@@ -60,9 +61,11 @@ const AnswerQuestion = () => {
               </Panel>
             </Collapse>
           </Col>
+          <Col span={1} />
           <Col span={6}>
             <Collapse
               ghost
+              expandIconPosition="end"
               expandIcon={({ isActive }) =>
                 isActive ? (
                   <Image

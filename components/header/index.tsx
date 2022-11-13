@@ -3,9 +3,11 @@ import Image from "next/image";
 import React from "react";
 import { SHeader } from "./styled";
 import { useRouter } from "next/router";
+import useWindowResize from "../../hook/useResize";
 
 const Header = () => {
   const router = useRouter();
+  const size = useWindowResize();
   return (
     <>
       <SHeader>
@@ -20,36 +22,45 @@ const Header = () => {
                 className="logo-image pointed"
                 onClick={() => router.push("/")}
               />
-              <div className="wrap-left-head">
-                <div className="content">
-                  <span>Trang chủ</span>
+              {size.width > 414 && (
+                <div className="wrap-left-head">
+                  <div className="content">
+                    <span>Trang chủ</span>
+                  </div>
+                  <div className="content">
+                    <span>Dự án</span>
+                  </div>
+                  <div className="content">
+                    <span>Kiến Thức</span>
+                  </div>
+                  <div className="content">
+                    <span>Sự kiện</span>
+                  </div>
+                  <div className="content">
+                    <span>Liên Hệ</span>
+                  </div>
                 </div>
-                <div className="content">
-                  <span>Dự án</span>
-                </div>
-                <div className="content">
-                  <span>Kiến Thức</span>
-                </div>
-                <div className="content">
-                  <span>Sự kiện</span>
-                </div>
-                <div className="content">
-                  <span>Liên Hệ</span>
-                </div>
+              )}
+            </div>
+          </Col>
+          {size.width > 414 && (
+            <Col xl={12} className="wrap-login">
+              <div className="wrap-right-head">
+                <button
+                  className="btn btn-sign-up pointed"
+                  onClick={() => router.push("/sign-up")}
+                >
+                  Đăng Ký
+                </button>
+                <button
+                  className="btn btn-sign-in pointed"
+                  onClick={() => router.push("/sign-in")}
+                >
+                  Đăng Nhập
+                </button>
               </div>
-            </div>
-          </Col>
-          <Col xl={12} className="wrap-login">
-            <div className="wrap-right-head">
-              <button className="btn btn-sign-up pointed">Đăng Ký</button>
-              <button
-                className="btn btn-sign-in pointed"
-                onClick={() => router.push("/sign-in")}
-              >
-                Đăng Nhập
-              </button>
-            </div>
-          </Col>
+            </Col>
+          )}
         </Row>
       </SHeader>
     </>
